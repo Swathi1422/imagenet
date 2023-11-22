@@ -2,11 +2,12 @@ from PIL import Image
 import numpy as np
 import pickle
 import cv2
-from keras.applications.inception_v3 import preprocess_input,decode_predictions
+from keras.applications.mobilenet import preprocess_input,decode_predictions
+from keras.applications import MobileNet
 import streamlit as st
 
-pickle_in = open('mobilenet.pkl','rb')
-clf = pickle.load(pickle_in)
+#pickle_in = open('mobilenet.pkl','rb')
+clf = MobileNet(weights='imagenet')
 img = st.file_uploader('Take any picture')
 if img:
     image = Image.open(img)
