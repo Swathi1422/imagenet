@@ -2,4 +2,4 @@ streamlit
 keras
 opencv-python
 numpy
-PIL
+Pillow
