@@ -7,6 +7,8 @@ from keras.applications import MobileNet
 import streamlit as st
 
 #pickle_in = open('mobilenet.pkl','rb')
+st.header('ARTIFICIAL INTELLIGENCE AND DATA SCEINCE::RCEE')
+st.title('Imagenet Classification')
 clf = MobileNet(weights='imagenet')
 img = st.file_uploader('Take any picture')
 if img:
@@ -16,5 +18,5 @@ if img:
     image = preprocess_input(image)
     image = cv2.resize(image,(224,224))
     predictions = decode_predictions(clf.predict(image.reshape(1,224,224,3)))
-    st.write(predictions[0][0][1])
+    st.text('Predicted as ' + predictions[0][0][1] + 'with accuracy ' + predictions[0][0][2])
     
