@@ -14,7 +14,7 @@ if img:
     st.image(image)
     image = np.array(image)
     image = preprocess_input(image)
-    image = cv2.resize(image,(299,299))
-    predictions = decode_predictions(clf.predict(image.reshape(1,299,299,3)))
+    image = cv2.resize(image,(224,224))
+    predictions = decode_predictions(clf.predict(image.reshape(1,224,224,3)))
     st.write(predictions[0][0][1])
     
