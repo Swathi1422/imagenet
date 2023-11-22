@@ -18,5 +18,5 @@ if img:
     image = preprocess_input(image)
     image = cv2.resize(image,(224,224))
     predictions = decode_predictions(clf.predict(image.reshape(1,224,224,3)))
-    st.text('Predicted as ' + predictions[0][0][1] + 'with accuracy ' + predictions[0][0][2])
+    st.text('Predicted as ' + str(predictions[0][0][1]) + 'with accuracy ' + str(predictions[0][0][2]))
     
